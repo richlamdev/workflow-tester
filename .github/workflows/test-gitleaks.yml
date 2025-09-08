@@ -1,0 +1,16 @@
+name: Test Gitleaks Scanning
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  checks: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  test-scan:
+    name: Test Gitleaks Scan
+    uses: richlamdev/workflow-tester/.github/workflows/gitleaks.yml@main
+    secrets: inherit
